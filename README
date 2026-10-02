@@ -1,1 +1,66 @@
+# Melanoma Classification using Deep Learning
 
+## Objective
+
+Binary classification of dermoscopic skin lesion images to predict
+whether a lesion is malignant.
+
+## Dataset
+
+SIIM-ISIC Melanoma Classification dataset.
+
+The dataset contains:
+- Training metadata
+- Test metadata
+- JPEG images
+- DICOM images
+- TFRecord files
+
+## Approach
+
+1. Load metadata from train.csv and test.csv
+2. Construct image paths
+3. Split training data into training and validation sets
+4. Apply image transformations
+5. Train an EfficientNet-based binary classifier
+6. Evaluate using ROC-AUC
+7. Generate probability predictions for test images
+8. Create submission.csv
+
+## Model
+
+EfficientNet-based binary classifier with a single output neuron.
+
+Loss:
+BCEWithLogitsLoss
+
+Optimizer:
+[PUT YOUR ACTUAL OPTIMIZER HERE]
+
+Evaluation metric:
+ROC-AUC
+
+## Preliminary Results
+
+Training samples: 5760
+Validation samples: 4903
+Epochs: 1
+
+Training AUC: 0.9316
+Validation AUC: 0.8586
+
+Test predictions generated: 5180
+
+## Repository Structure
+
+notebooks/  - training notebook
+src/        - dataset, model, training and inference code
+results/    - experimental results
+report/     - report figures
+
+## Note
+
+The reported experiment uses a reduced training subset and one epoch
+due to computational constraints. Results should therefore be
+interpreted as a preliminary experiment rather than the final
+fully-trained model performance.
